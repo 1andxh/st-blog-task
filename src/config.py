@@ -6,5 +6,7 @@ class config(BaseSettings):
         env_file=".env", env_ignore_empty=True, extra="ignore"
     )
 
+    DATABASE_URL: str
 
-config = config()  # type: ignore
+
+settings = config()  # type: ignore

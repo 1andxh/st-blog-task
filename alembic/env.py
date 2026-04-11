@@ -6,12 +6,14 @@ from sqlalchemy import pool
 from alembic import context
 from src.config import settings
 from src.database import Base
+from src.blog.models import Post
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
+database_url = settings.DATABASE_URL
 
-config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
+config.set_main_option("sqlalchemy.url", database_url)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
